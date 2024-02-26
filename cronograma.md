@@ -31,6 +31,17 @@ se descargo intelgent, se descrgo el programa, en telegran en botfhater se creo 
 
 Para completar la primera tarea, necesitas tener instalados IntelliJ IDEA y JDK, así como haber descargado el archivo comprimido con la plantilla del futuro proyecto. Enlaces a videos sobre cómo instalar estas herramientas y al archivo comprimido con el proyecto los encontrarás  en la descripción del video (o en publicaciones anteriores en este chat).
 
+### CLASE N.º 2. Creando el esqueleto del juego en el bot, procesando eventos y formateando textos de mensajes
+
+Hoy, junto con Alexei, escribirás la base de tu juego en el bot: procesarás el evento después de que el usuario presione "/start", verificarás el contenido de los mensajes y te familiarizaras con la formateo de texto de los mensajes.
+[dia2][video1-dia2]
+Duración: 11 minutos.
+
+Resumen
+
+Se agregaron condicionales if para un mensaje especifico con getMessageText().equals("") y se buscaron palabras dentro de un texto con getMessageText().contains() donde dependiendo de la respuesta se mandaba un mensaje
+
 
 [video-introduccion]:https://www.youtube.com/watch?v=KxB0ofJObJc&ab_channel=CodeGym
 [video1-dia1]:https://www.youtube.com/watch?v=JNblWdUPbNs&ab_channel=CodeGym
+[video1-dia2]:https://www.youtube.com/watch?v=6uhWBlb9mhg
