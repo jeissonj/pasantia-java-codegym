@@ -5,6 +5,10 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+import java.util.Map;
+
+import static es.codegym.telegrambot.TelegramBotContent.*;
+
 public class MyFirstTelegramBot extends MultiSessionTelegramBot {
 
     public static final String NAME = "CodeGymGatoBot_bot";
@@ -18,13 +22,47 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
     public void onUpdateEventReceived(Update update) {
         // TODO: escribiremos la funcionalidad principal del bot aquí
         if(getMessageText().equals("/start")){
-            sendTextMessageAsync("Hola, futuro programador Jeisson");
+            setUserGlory(0);
+            sendTextMessageAsync(STEP_1_TEXT,
+                    Map.of( "Hakear la nevera", "step_1_btn"));
         }
-        if(getMessageText().contains("hola")){
-            sendTextMessageAsync("Hola ¿Cuál es tu nombre?");
+        if(getCallbackQueryButtonKey().equals("step_1_btn")){
+            setUserGlory(20);
+            sendTextMessageAsync(STEP_2_TEXT,
+                    Map.of( "¡Tomar una salchicha! +20 de fama", "step_2_btn",
+                            "¡Tomar un pescado! +20 de fama", "step_2_btn",
+                            "¡Tirar la lata de pepinillos! +20 de fama", "step_2_btn"));
         }
-        if(getMessageText().contains("mi nombre es")){
-            sendTextMessageAsync("Un placer yo soy Gato");
+        if (getCallbackQueryButtonKey().equals("step_2_btn")){
+            setUserGlory(20);
+            sendTextMessageAsync(STEP_3_TEXT,
+                    Map.of("Hackear la robot aspiradora", "step_3_btn"));
+        }
+        if (getCallbackQueryButtonKey().equals("step_3_btn")){
+            setUserGlory(30);
+            sendTextMessageAsync(STEP_4_TEXT,
+                    Map.of("Enviar al robot aspiradora a por comida! +30 de fama", "step_4_btn",
+                            "Dar un pasep en el robot aspiradora +30 de fama", "step_4_btn",
+                            "¡Huir del robot aspiradora! +30 de fama", "step_4_btn"));
+        }
+        if (getCallbackQueryButtonKey().equals("step_4_btn")){
+            sendTextMessageAsync(STEP_5_TEXT,
+                    Map.of("Salir al patio", "step_5_btn"));
+        }
+        if (getCallbackQueryButtonKey().equals("step_5_btn")){
+            sendTextMessageAsync(STEP_6_TEXT,
+                    Map.of("Conseguir una computadora", "step_6_btn"));
+        }
+        if (getCallbackQueryButtonKey().equals("step_6_btn")){
+            sendTextMessageAsync(STEP_7_TEXT,
+                    Map.of("Conseguir una computadora", "step_7_btn"));
+        }
+        if (getCallbackQueryButtonKey().equals("step_7_btn")){
+            sendTextMessageAsync(STEP_8_TEXT,
+                    Map.of("Hacer tareas de gato hacker", "step_8_btn"));
+        }
+        if (getCallbackQueryButtonKey().equals("step_8_btn")){
+            sendTextMessageAsync(FINAL_TEXT);
         }
     }
 
