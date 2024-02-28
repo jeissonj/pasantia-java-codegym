@@ -27,41 +27,48 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
                     Map.of( "Hakear la nevera", "step_1_btn"));
         }
         if(getCallbackQueryButtonKey().equals("step_1_btn")){
-            setUserGlory(20);
+            addUserGlory(20);
             sendTextMessageAsync(STEP_2_TEXT,
                     Map.of( "¡Tomar una salchicha! +20 de fama", "step_2_btn",
                             "¡Tomar un pescado! +20 de fama", "step_2_btn",
                             "¡Tirar la lata de pepinillos! +20 de fama", "step_2_btn"));
         }
         if (getCallbackQueryButtonKey().equals("step_2_btn")){
-            setUserGlory(20);
+            addUserGlory(20);
             sendTextMessageAsync(STEP_3_TEXT,
                     Map.of("Hackear la robot aspiradora", "step_3_btn"));
         }
         if (getCallbackQueryButtonKey().equals("step_3_btn")){
-            setUserGlory(30);
+            addUserGlory(30);
             sendTextMessageAsync(STEP_4_TEXT,
                     Map.of("Enviar al robot aspiradora a por comida! +30 de fama", "step_4_btn",
                             "Dar un pasep en el robot aspiradora +30 de fama", "step_4_btn",
                             "¡Huir del robot aspiradora! +30 de fama", "step_4_btn"));
         }
         if (getCallbackQueryButtonKey().equals("step_4_btn")){
+            addUserGlory(30);
             sendTextMessageAsync(STEP_5_TEXT,
-                    Map.of("Salir al patio", "step_5_btn"));
+                    Map.of("Encender y ponerse la GoPro", "step_5_btn"));
         }
         if (getCallbackQueryButtonKey().equals("step_5_btn")){
+            addUserGlory(40);
             sendTextMessageAsync(STEP_6_TEXT,
-                    Map.of("Conseguir una computadora", "step_6_btn"));
+                    Map.of("correr por los tejados y grabar con la GoPro +40 de fama", "step_6_btn",
+                            "escondese y assustar los perros +40 de fama", "step_6_btn",
+                            "Esconderse y asustar a los gatos", "step_6_btn"));
         }
         if (getCallbackQueryButtonKey().equals("step_6_btn")){
+            addUserGlory(40);
             sendTextMessageAsync(STEP_7_TEXT,
-                    Map.of("Conseguir una computadora", "step_7_btn"));
+                    Map.of("Romper la contraseña", "step_7_btn"));
         }
         if (getCallbackQueryButtonKey().equals("step_7_btn")){
+            addUserGlory(50);
             sendTextMessageAsync(STEP_8_TEXT,
-                    Map.of("Hacer tareas de gato hacker", "step_8_btn"));
+                    Map.of("Salir al patio", "step_8_btn"));
         }
         if (getCallbackQueryButtonKey().equals("step_8_btn")){
+            addUserGlory(50);
             sendTextMessageAsync(FINAL_TEXT);
         }
     }
